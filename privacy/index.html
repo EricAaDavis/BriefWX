@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#F1F6FA" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0A0E14" media="(prefers-color-scheme: dark)" />
-  <title>Privacy Policy - BriefWX</title>
+  <title>Privacy Policy - Brief</title>
   <style>
     :root {
       color-scheme: light;
@@ -94,9 +94,14 @@
       height: 34px;
       place-items: center;
       border-radius: 8px;
-      color: #fff;
-      background: linear-gradient(145deg, var(--accent), var(--action));
       box-shadow: 0 10px 24px rgba(0, 131, 242, 0.22);
+      overflow: hidden;
+    }
+
+    .mark img {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
 
     .links {
@@ -145,6 +150,20 @@
       margin: 22px 0 0;
       color: var(--muted);
       font-size: 1.16rem;
+    }
+
+    .hero-icon {
+      display: block;
+      width: clamp(96px, 18vw, 152px);
+      margin-top: 30px;
+      filter: drop-shadow(0 22px 32px rgba(0, 131, 242, 0.2));
+    }
+
+    .hero-icon img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22%;
     }
 
     main {
@@ -225,8 +244,11 @@
     <header>
       <nav aria-label="Legal pages">
         <a class="brand" href="../privacy/">
-          <span class="mark" aria-hidden="true">B</span>
-          BriefWX
+          <picture class="mark" aria-hidden="true">
+            <source srcset="../assets/brief-icon-dark.png" media="(prefers-color-scheme: dark)" />
+            <img src="../assets/brief-icon-default.png" alt="" />
+          </picture>
+          Brief
         </a>
         <div class="links">
           <a href="../privacy/" aria-current="page">Privacy</a>
@@ -236,18 +258,22 @@
 
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="intro">BriefWX is built to keep aviation weather lookup simple without collecting personal information.</p>
+      <p class="intro">Brief is built to keep aviation weather lookup simple without collecting personal information.</p>
+      <picture class="hero-icon">
+        <source srcset="../assets/brief-icon-dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="../assets/brief-icon-default.png" alt="Brief app icon" />
+      </picture>
     </header>
 
     <main>
       <section>
         <h2>No Personal Data Collection</h2>
-        <p><strong>BriefWX</strong> does not collect, store, or share any personal information.</p>
+        <p><strong>Brief</strong> does not collect, store, or share any personal information.</p>
       </section>
 
       <section>
         <h2>Weather Data</h2>
-        <p>The app retrieves aviation weather data, including METAR and TAF information, from publicly available sources. No personal data is sent to or stored by BriefWX.</p>
+        <p>The app retrieves aviation weather data, including METAR and TAF information, from publicly available sources. No personal data is sent to or stored by Brief.</p>
       </section>
 
       <section>
@@ -257,7 +283,7 @@
 
       <section>
         <h2>Advertising</h2>
-        <p>BriefWX does not use tracking for advertising purposes.</p>
+        <p>Brief does not use tracking for advertising purposes.</p>
       </section>
 
       <section>
@@ -265,11 +291,11 @@
         <p>If you have any questions, contact <a href="mailto:patters_sage_8z@icloud.com">patters_sage_8z@icloud.com</a>.</p>
       </section>
 
-      <p class="note">This page is intended to describe the current privacy practices for BriefWX.</p>
+      <p class="note">This page is intended to describe the current privacy practices for Brief.</p>
     </main>
 
     <footer>
-      <span>BriefWX</span>
+      <span>Brief</span>
     </footer>
   </div>
 </body>

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#F1F6FA" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0A0E14" media="(prefers-color-scheme: dark)" />
-  <title>Terms of Service - BriefWX</title>
+  <title>Terms of Service - Brief</title>
   <style>
     :root {
       color-scheme: light;
@@ -94,9 +94,14 @@
       height: 34px;
       place-items: center;
       border-radius: 8px;
-      color: #fff;
-      background: linear-gradient(145deg, var(--accent), var(--action));
       box-shadow: 0 10px 24px rgba(0, 131, 242, 0.22);
+      overflow: hidden;
+    }
+
+    .mark img {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
 
     .links {
@@ -157,6 +162,20 @@
       font-size: 0.92rem;
       font-weight: 800;
       background: var(--nav-surface);
+    }
+
+    .hero-icon {
+      display: block;
+      width: clamp(96px, 18vw, 152px);
+      margin-top: 30px;
+      filter: drop-shadow(0 22px 32px rgba(0, 131, 242, 0.2));
+    }
+
+    .hero-icon img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 22%;
     }
 
     main {
@@ -237,8 +256,11 @@
     <header>
       <nav aria-label="Legal pages">
         <a class="brand" href="../privacy/">
-          <span class="mark" aria-hidden="true">B</span>
-          BriefWX
+          <picture class="mark" aria-hidden="true">
+            <source srcset="../assets/brief-icon-dark.png" media="(prefers-color-scheme: dark)" />
+            <img src="../assets/brief-icon-default.png" alt="" />
+          </picture>
+          Brief
         </a>
         <div class="links">
           <a href="../privacy/">Privacy</a>
@@ -248,51 +270,55 @@
 
       <p class="eyebrow">Legal</p>
       <h1>Terms of Service</h1>
-      <p class="intro">These terms outline how BriefWX should be used as a reference for aviation weather information.</p>
+      <p class="intro">These terms outline how Brief should be used as a reference for aviation weather information.</p>
       <p class="effective-date">Effective Date: May 8, 2026</p>
+      <picture class="hero-icon">
+        <source srcset="../assets/brief-icon-dark.png" media="(prefers-color-scheme: dark)" />
+        <img src="../assets/brief-icon-default.png" alt="Brief app icon" />
+      </picture>
     </header>
 
     <main>
       <section>
-        <h2>1. About BriefWX</h2>
-        <p>BriefWX provides aviation weather information, including METAR and TAF data, from publicly available or third-party sources. The app is intended as a convenient reference tool for aviation users.</p>
+        <h2>1. About Brief</h2>
+        <p>Brief provides aviation weather information, including METAR and TAF data, from publicly available or third-party sources. The app is intended as a convenient reference tool for aviation users.</p>
       </section>
 
       <section>
         <h2>2. Not for Sole Operational Use</h2>
-        <p>BriefWX is not a substitute for official weather briefings, flight planning tools, regulatory guidance, or pilot judgment.</p>
+        <p>Brief is not a substitute for official weather briefings, flight planning tools, regulatory guidance, or pilot judgment.</p>
         <p>You are responsible for verifying all weather and operational information through official sources before making flight or operational decisions.</p>
       </section>
 
       <section>
         <h2>3. Weather Data</h2>
-        <p>BriefWX retrieves aviation weather data from external sources. While the app aims to present accurate information, BriefWX does not guarantee that weather information will always be complete, current, accurate, or available.</p>
+        <p>Brief retrieves aviation weather data from external sources. While the app aims to present accurate information, Brief does not guarantee that weather information will always be complete, current, accurate, or available.</p>
       </section>
 
       <section>
         <h2>4. Subscriptions</h2>
-        <p>If BriefWX offers premium subscriptions or paid features, purchases and billing are handled by Apple through the App Store.</p>
+        <p>If Brief offers premium subscriptions or paid features, purchases and billing are handled by Apple through the App Store.</p>
         <p>Subscription renewals, cancellations, refunds, and payment processing are governed by Apple's App Store policies.</p>
       </section>
 
       <section>
         <h2>5. Acceptable Use</h2>
-        <p>You agree not to misuse BriefWX, interfere with its operation, attempt unauthorized access, or use the app in violation of applicable laws or regulations.</p>
+        <p>You agree not to misuse Brief, interfere with its operation, attempt unauthorized access, or use the app in violation of applicable laws or regulations.</p>
       </section>
 
       <section>
         <h2>6. No Warranty</h2>
-        <p>BriefWX is provided on an "as is" and "as available" basis without warranties of any kind, express or implied.</p>
+        <p>Brief is provided on an "as is" and "as available" basis without warranties of any kind, express or implied.</p>
       </section>
 
       <section>
         <h2>7. Limitation of Liability</h2>
-        <p>To the maximum extent permitted by law, BriefWX and its creator are not liable for damages, losses, or consequences arising from the use of the app or reliance on information displayed in the app.</p>
+        <p>To the maximum extent permitted by law, Brief and its creator are not liable for damages, losses, or consequences arising from the use of the app or reliance on information displayed in the app.</p>
       </section>
 
       <section>
         <h2>8. Changes to These Terms</h2>
-        <p>These Terms of Service may be updated from time to time. Continued use of BriefWX after updates constitutes acceptance of the revised terms.</p>
+        <p>These Terms of Service may be updated from time to time. Continued use of Brief after updates constitutes acceptance of the revised terms.</p>
       </section>
 
       <section>
@@ -300,11 +326,11 @@
         <p>If you have any questions regarding these terms, contact <a href="mailto:patters_sage_8z@icloud.com">patters_sage_8z@icloud.com</a>.</p>
       </section>
 
-      <p class="note">BriefWX is a reference tool. Always verify weather and operational information through official sources before flight or operational decisions.</p>
+      <p class="note">Brief is a reference tool. Always verify weather and operational information through official sources before flight or operational decisions.</p>
     </main>
 
     <footer>
-      <span>BriefWX</span>
+      <span>Brief</span>
     </footer>
   </div>
 </body>
