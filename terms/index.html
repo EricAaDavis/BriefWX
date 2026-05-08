@@ -3,72 +3,309 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F1F6FA" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0A0E14" media="(prefers-color-scheme: dark)" />
   <title>Terms of Service - BriefWX</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      color: #111;
-      background: #fff;
+    :root {
+      color-scheme: light;
+      --accent: #0A77C9;
+      --action: #0083F2;
+      --tile-blue: rgba(0, 122, 255, 0.12);
+      --background: #F1F6FA;
+      --secondary-background: #EDF3F8;
+      --card-background: #D6E6F3;
+      --ink: #102033;
+      --body-text: #25384c;
+      --muted: #56687a;
+      --line: rgba(10, 119, 201, 0.18);
+      --accent-line: rgba(10, 119, 201, 0.38);
+      --nav-surface: rgba(255, 255, 255, 0.64);
+      --note-surface: rgba(214, 230, 243, 0.72);
     }
 
-    h1, h2 {
-      line-height: 1.25;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        color-scheme: dark;
+        --accent: #5299D3;
+        --action: #17529E;
+        --tile-blue: rgba(0, 122, 255, 0.12);
+        --background: #0A0E14;
+        --secondary-background: #1D2533;
+        --card-background: #161C26;
+        --ink: #EEF6FC;
+        --body-text: #D6E6F3;
+        --muted: #A9B8C8;
+        --line: rgba(82, 153, 211, 0.24);
+        --accent-line: rgba(82, 153, 211, 0.48);
+        --nav-surface: rgba(29, 37, 51, 0.76);
+        --note-surface: rgba(22, 28, 38, 0.86);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, var(--tile-blue), transparent 34rem),
+        linear-gradient(145deg, var(--background), var(--secondary-background));
+    }
+
+    .page {
+      width: min(920px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 36px 0 56px;
+    }
+
+    header {
+      padding: 34px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 52px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-decoration: none;
+    }
+
+    .mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 8px;
+      color: #fff;
+      background: linear-gradient(145deg, var(--accent), var(--action));
+      box-shadow: 0 10px 24px rgba(0, 131, 242, 0.22);
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .links a {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      background: var(--nav-surface);
+    }
+
+    .links a[aria-current="page"] {
+      color: var(--accent);
+      border-color: var(--accent-line);
+      background: var(--tile-blue);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     h1 {
-      margin-bottom: 0.25rem;
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      max-width: 680px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.16rem;
     }
 
     .effective-date {
-      color: #555;
-      margin-bottom: 2rem;
+      display: inline-flex;
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 800;
+      background: var(--nav-surface);
+    }
+
+    main {
+      padding: 34px 0 0;
+    }
+
+    section {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    p {
+      max-width: 720px;
+      margin: 0 0 14px;
+      color: var(--body-text);
+      font-size: 1.02rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
     }
 
     a {
-      color: #0645ad;
+      color: var(--action);
+      font-weight: 700;
+      text-underline-offset: 3px;
+    }
+
+    .note {
+      margin-top: 34px;
+      padding: 18px 20px;
+      border-left: 4px solid var(--accent);
+      color: var(--muted);
+      background: var(--note-surface);
+    }
+
+    footer {
+      padding-top: 32px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: min(100% - 24px, 920px);
+        padding-top: 20px;
+      }
+
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 38px;
+      }
+
+      .links {
+        justify-content: flex-start;
+      }
+
+      header {
+        padding-top: 22px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Terms of Service</h1>
-  <p class="effective-date"><strong>Effective Date:</strong> May 8, 2026</p>
+  <div class="page">
+    <header>
+      <nav aria-label="Legal pages">
+        <a class="brand" href="../privacy/">
+          <span class="mark" aria-hidden="true">B</span>
+          BriefWX
+        </a>
+        <div class="links">
+          <a href="../privacy/">Privacy</a>
+          <a href="../terms/" aria-current="page">Terms</a>
+        </div>
+      </nav>
 
-  <p>These Terms of Service govern your use of BriefWX.</p>
+      <p class="eyebrow">Legal</p>
+      <h1>Terms of Service</h1>
+      <p class="intro">These terms outline how BriefWX should be used as a reference for aviation weather information.</p>
+      <p class="effective-date">Effective Date: May 8, 2026</p>
+    </header>
 
-  <h2>1. About BriefWX</h2>
-  <p>BriefWX provides aviation weather information, including METAR and TAF data, from publicly available or third-party sources. The app is intended as a convenient reference tool for aviation users.</p>
+    <main>
+      <section>
+        <h2>1. About BriefWX</h2>
+        <p>BriefWX provides aviation weather information, including METAR and TAF data, from publicly available or third-party sources. The app is intended as a convenient reference tool for aviation users.</p>
+      </section>
 
-  <h2>2. Not for Sole Operational Use</h2>
-  <p>BriefWX is not a substitute for official weather briefings, flight planning tools, regulatory guidance, or pilot judgment.</p>
+      <section>
+        <h2>2. Not for Sole Operational Use</h2>
+        <p>BriefWX is not a substitute for official weather briefings, flight planning tools, regulatory guidance, or pilot judgment.</p>
+        <p>You are responsible for verifying all weather and operational information through official sources before making flight or operational decisions.</p>
+      </section>
 
-  <p>You are responsible for verifying all weather and operational information through official sources before making flight or operational decisions.</p>
+      <section>
+        <h2>3. Weather Data</h2>
+        <p>BriefWX retrieves aviation weather data from external sources. While the app aims to present accurate information, BriefWX does not guarantee that weather information will always be complete, current, accurate, or available.</p>
+      </section>
 
-  <h2>3. Weather Data</h2>
-  <p>BriefWX retrieves aviation weather data from external sources. While the app aims to present accurate information, BriefWX does not guarantee that weather information will always be complete, current, accurate, or available.</p>
+      <section>
+        <h2>4. Subscriptions</h2>
+        <p>If BriefWX offers premium subscriptions or paid features, purchases and billing are handled by Apple through the App Store.</p>
+        <p>Subscription renewals, cancellations, refunds, and payment processing are governed by Apple's App Store policies.</p>
+      </section>
 
-  <h2>4. Subscriptions</h2>
-  <p>If BriefWX offers premium subscriptions or paid features, purchases and billing are handled by Apple through the App Store.</p>
+      <section>
+        <h2>5. Acceptable Use</h2>
+        <p>You agree not to misuse BriefWX, interfere with its operation, attempt unauthorized access, or use the app in violation of applicable laws or regulations.</p>
+      </section>
 
-  <p>Subscription renewals, cancellations, refunds, and payment processing are governed by Apple’s App Store policies.</p>
+      <section>
+        <h2>6. No Warranty</h2>
+        <p>BriefWX is provided on an "as is" and "as available" basis without warranties of any kind, express or implied.</p>
+      </section>
 
-  <h2>5. Acceptable Use</h2>
-  <p>You agree not to misuse BriefWX, interfere with its operation, attempt unauthorized access, or use the app in violation of applicable laws or regulations.</p>
+      <section>
+        <h2>7. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, BriefWX and its creator are not liable for damages, losses, or consequences arising from the use of the app or reliance on information displayed in the app.</p>
+      </section>
 
-  <h2>6. No Warranty</h2>
-  <p>BriefWX is provided on an “as is” and “as available” basis without warranties of any kind, express or implied.</p>
+      <section>
+        <h2>8. Changes to These Terms</h2>
+        <p>These Terms of Service may be updated from time to time. Continued use of BriefWX after updates constitutes acceptance of the revised terms.</p>
+      </section>
 
-  <h2>7. Limitation of Liability</h2>
-  <p>To the maximum extent permitted by law, BriefWX and its creator are not liable for damages, losses, or consequences arising from the use of the app or reliance on information displayed in the app.</p>
+      <section>
+        <h2>9. Contact</h2>
+        <p>If you have any questions regarding these terms, contact <a href="mailto:patters_sage_8z@icloud.com">patters_sage_8z@icloud.com</a>.</p>
+      </section>
 
-  <h2>8. Changes to These Terms</h2>
-  <p>These Terms of Service may be updated from time to time. Continued use of BriefWX after updates constitutes acceptance of the revised terms.</p>
+      <p class="note">BriefWX is a reference tool. Always verify weather and operational information through official sources before flight or operational decisions.</p>
+    </main>
 
-  <h2>9. Contact</h2>
-  <p>If you have any questions regarding these terms, contact:</p>
-  <p><a href="mailto:patters_sage_8z@icloud.com">patters_sage_8z@icloud.com</a></p>
+    <footer>
+      <span>BriefWX</span>
+    </footer>
+  </div>
 </body>
 </html>
